@@ -1,0 +1,86 @@
+{
+   "version": "1.1.4",
+  "description": "Magiczna Kula odpowiedająca na każde pytanie",
+  "updateType": "Ważna aktualizacja",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "magiczna-kula-nr-8",
+    "win": {
+      "target": "NSIS",
+      "icon": "./icons/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "./icons/icon.ico",
+      "uninstallerIcon": "./icons/icon.ico",
+      "uninstallDisplayName": "Magiczna Kula nr 8",
+      "license": "",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [
+    "electron",
+    "magiczna kula 8",
+    "kula",
+    "magiczna",
+    "KProgramy",
+    "Rudzix66",
+    "8",
+    "JavaScript",
+    "electron 11.2.3"
+  ],
+  "author": "KProgramy",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "magic_8"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "windows"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "chalk": "^4.1.2",
+    "electron-log": "^4.4.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "json-schema": "^0.4.0",
+    "trim-newlines": "^3.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^11.5.0",
+    "electron-builder": "^22.14.5"
+  }
+}
